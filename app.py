@@ -92,6 +92,9 @@ selected_movie = st.selectbox(
 )
 
 
+st.markdown("### 🎯 Get Recommendations")
+
+
 if st.button(
     "✨ Recommend Movies",
     type="primary",
