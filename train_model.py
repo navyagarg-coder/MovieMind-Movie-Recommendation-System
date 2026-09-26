@@ -23,10 +23,14 @@ def main():
     """Build the recommender model and print a validation summary."""
     start_time = time.time()
 
-    recommender = MovieRecommender(
-        MOVIES_DATASET_PATH,
-        CREDITS_DATASET_PATH,
-    )
+    try:
+        recommender = MovieRecommender(
+            MOVIES_DATASET_PATH,
+            CREDITS_DATASET_PATH,
+        )
+    except Exception as error:
+        print(f"Failed to build model: {error}")
+        raise
 
     elapsed_seconds = time.time() - start_time
 
