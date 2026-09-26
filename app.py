@@ -147,7 +147,7 @@ if st.button(
             if movie["genres"]:
 
                 st.caption(
-                    f"Genre: {movie['genres']}"
+                    f"🎭 Genre: {movie['genres']}"
                 )
 
             with st.expander(
