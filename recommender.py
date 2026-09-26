@@ -10,6 +10,11 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 
+TFIDF_MAX_FEATURES = 50000
+TFIDF_NGRAM_RANGE = (1, 2)
+TFIDF_MIN_DF = 2
+
+
 class MovieRecommender:
 
     def __init__(self, movies_path, credits_path):
@@ -20,10 +25,10 @@ class MovieRecommender:
         self.movies = self.load_and_prepare_data()
 
         self.vectorizer = TfidfVectorizer(
-            max_features=50000,
+            max_features=TFIDF_MAX_FEATURES,
             stop_words="english",
-            ngram_range=(1, 2),
-            min_df=2,
+            ngram_range=TFIDF_NGRAM_RANGE,
+            min_df=TFIDF_MIN_DF,
             sublinear_tf=True
         )
 
