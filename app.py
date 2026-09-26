@@ -78,6 +78,14 @@ st.sidebar.caption(
 )
 
 
+st.markdown("### 🔍 Choose a Movie")
+
+st.caption(
+    "Select a movie below and MovieMind will find "
+    "movies with similar content."
+)
+
+
 selected_movie = st.selectbox(
     "🎞️ Select a movie",
     movie_titles
