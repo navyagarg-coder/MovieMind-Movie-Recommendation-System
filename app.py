@@ -49,13 +49,24 @@ except Exception as error:
     st.stop()
 
 
-st.sidebar.title("⚙️ Settings")
+st.sidebar.title("⚙️ MovieMind Settings")
+
+st.sidebar.write(
+    "Customize how many movies you want to see."
+)
 
 number_of_movies = st.sidebar.slider(
     "Number of recommendations",
     min_value=5,
     max_value=15,
     value=10
+)
+
+st.sidebar.divider()
+
+st.sidebar.caption(
+    "Recommendation method: "
+    "TF-IDF + Cosine Similarity"
 )
 
 
