@@ -402,6 +402,7 @@ class MovieRecommender:
         title,
         top_n=10
     ):
+        """Return the top_n most similar movies to the given title."""
 
         index = self.find_index(
             title
