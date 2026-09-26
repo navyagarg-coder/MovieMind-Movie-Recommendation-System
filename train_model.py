@@ -10,11 +10,13 @@ Run:
 This script validates the dataset and reports the number of movies/features.
 """
 
+import sys
 import time
 
 from recommender import MovieRecommender
 
 
+# This script is useful for local validation and CI checks before deploying
 MOVIES_DATASET_PATH = "data/tmdb_5000_movies.csv"
 CREDITS_DATASET_PATH = "data/tmdb_5000_credits.csv"
 
@@ -43,3 +45,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    sys.exit(0)
