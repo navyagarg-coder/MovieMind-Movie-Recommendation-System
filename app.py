@@ -140,7 +140,7 @@ if st.button(
             )
 
             st.caption(
-                f"Similarity: "
+                f"🎯 Similarity Score: "
                 f"{movie['similarity']:.1f}%"
             )
 
