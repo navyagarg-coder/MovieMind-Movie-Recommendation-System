@@ -16,6 +16,8 @@ TFIDF_MIN_DF = 2
 
 CAST_LIMIT = 5
 
+POSTER_BASE_URL = "https://image.tmdb.org/t/p/w500"
+
 
 class MovieRecommender:
 
@@ -460,7 +462,7 @@ class MovieRecommender:
             if poster_path:
 
                 poster_url = (
-                    "https://image.tmdb.org/t/p/w500"
+                    POSTER_BASE_URL
                     + poster_path
                 )
 
