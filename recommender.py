@@ -57,6 +57,7 @@ class MovieRecommender:
 
     @staticmethod
     def parse_json(value):
+        """Safely parse a JSON-like string column, falling back to literal_eval."""
 
         if pd.isna(value) or not value:
             return []
