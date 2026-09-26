@@ -49,10 +49,13 @@ except Exception as error:
     st.stop()
 
 
+movie_titles = recommender.get_movie_titles()
+
+
 st.sidebar.title("⚙️ MovieMind Settings")
 
 st.sidebar.write(
-    "Customize how many movies you want to see."
+    "Customize your recommendation experience."
 )
 
 number_of_movies = st.sidebar.slider(
@@ -64,13 +67,15 @@ number_of_movies = st.sidebar.slider(
 
 st.sidebar.divider()
 
+st.sidebar.metric(
+    "Movies Available",
+    len(movie_titles)
+)
+
 st.sidebar.caption(
     "Recommendation method: "
     "TF-IDF + Cosine Similarity"
 )
-
-
-movie_titles = recommender.get_movie_titles()
 
 
 selected_movie = st.selectbox(
