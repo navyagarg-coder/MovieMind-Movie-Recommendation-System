@@ -166,6 +166,7 @@ class MovieRecommender:
     # -----------------------------
 
     def load_and_prepare_data(self):
+        """Load movies/credits CSVs, merge them, and build the combined text features."""
 
         if not self.movies_path.exists():
 
