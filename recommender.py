@@ -21,6 +21,8 @@ POSTER_BASE_URL = "https://image.tmdb.org/t/p/w500"
 REQUIRED_MOVIE_COLUMNS = {"id", "title", "overview", "genres", "keywords"}
 REQUIRED_CREDIT_COLUMNS = {"movie_id", "cast", "crew"}
 
+UNKNOWN_TITLE = "Unknown Movie"
+
 
 class MovieRecommender:
 
@@ -301,7 +303,7 @@ class MovieRecommender:
 
         data["title"] = data[
             "title"
-        ].fillna("Unknown Movie")
+        ].fillna(UNKNOWN_TITLE)
 
         # Poster path is optional
         if "poster_path" not in data.columns:
@@ -318,6 +320,7 @@ class MovieRecommender:
         # COMBINE FEATURES
         # -----------------------------
 
+        # Genres and keywords are duplicated to give them more weight in the TF-IDF vectorization
         data["combined_features"] = (
 
             data["genres_text"] + " "
