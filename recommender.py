@@ -18,6 +18,9 @@ CAST_LIMIT = 5
 
 POSTER_BASE_URL = "https://image.tmdb.org/t/p/w500"
 
+REQUIRED_MOVIE_COLUMNS = {"id", "title", "overview", "genres", "keywords"}
+REQUIRED_CREDIT_COLUMNS = {"movie_id", "cast", "crew"}
+
 
 class MovieRecommender:
 
@@ -190,28 +193,13 @@ class MovieRecommender:
             self.credits_path
         )
 
-        # Required columns
-        required_movie_columns = {
-            "id",
-            "title",
-            "overview",
-            "genres",
-            "keywords"
-        }
-
-        required_credit_columns = {
-            "movie_id",
-            "cast",
-            "crew"
-        }
-
         missing_movies = (
-            required_movie_columns
+            REQUIRED_MOVIE_COLUMNS
             - set(movies.columns)
         )
 
         missing_credits = (
-            required_credit_columns
+            REQUIRED_CREDIT_COLUMNS
             - set(credits.columns)
         )
 
