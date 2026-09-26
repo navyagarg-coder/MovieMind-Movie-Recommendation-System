@@ -14,6 +14,8 @@ TFIDF_MAX_FEATURES = 50000
 TFIDF_NGRAM_RANGE = (1, 2)
 TFIDF_MIN_DF = 2
 
+CAST_LIMIT = 5
+
 
 class MovieRecommender:
 
@@ -104,7 +106,7 @@ class MovieRecommender:
 
         return cls.extract_names(
             value,
-            limit=5
+            limit=CAST_LIMIT
         )
 
     # -----------------------------
