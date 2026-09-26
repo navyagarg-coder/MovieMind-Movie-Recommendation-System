@@ -54,10 +54,6 @@ movie_titles = recommender.get_movie_titles()
 
 st.sidebar.title("⚙️ MovieMind Settings")
 
-st.sidebar.write(
-    "Customize your recommendation experience."
-)
-
 number_of_movies = st.sidebar.slider(
     "Number of recommendations",
     min_value=5,
@@ -72,8 +68,12 @@ st.sidebar.metric(
     len(movie_titles)
 )
 
+st.sidebar.metric(
+    "Recommendations",
+    number_of_movies
+)
+
 st.sidebar.caption(
-    "Recommendation method: "
     "TF-IDF + Cosine Similarity"
 )
 
@@ -97,6 +97,10 @@ if st.button(
 
     st.success(
         f"Recommendations based on: {selected_movie}"
+    )
+
+    st.write(
+        f"Showing {len(recommendations)} similar movies."
     )
 
     columns = st.columns(5)
