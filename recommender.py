@@ -1,3 +1,4 @@
+"""MovieRecommender - content-based movie recommendation engine using TF-IDF."""
 import ast
 import json
 import re
