@@ -151,7 +151,7 @@ if st.button(
                 )
 
             with st.expander(
-                "View Overview"
+                "📖 View Overview"
             ):
 
                 if movie["overview"]:
@@ -170,6 +170,9 @@ if st.button(
 st.divider()
 
 st.caption(
-    "MovieMind uses TF-IDF and cosine similarity "
-    "for content-based movie recommendations."
+    "🎬 MovieMind | Content-Based Recommendation System"
+)
+
+st.caption(
+    "Powered by TF-IDF and Cosine Similarity"
 )
