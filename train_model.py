@@ -13,10 +13,14 @@ This script validates the dataset and reports the number of movies/features.
 from recommender import MovieRecommender
 
 
+MOVIES_DATASET_PATH = "data/tmdb_5000_movies.csv"
+CREDITS_DATASET_PATH = "data/tmdb_5000_credits.csv"
+
+
 if __name__ == "__main__":
     recommender = MovieRecommender(
-        "data/tmdb_5000_movies.csv",
-        "data/tmdb_5000_credits.csv",
+        MOVIES_DATASET_PATH,
+        CREDITS_DATASET_PATH,
     )
 
     print("MovieMind model built successfully.")
